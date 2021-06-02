@@ -1,0 +1,34 @@
+.addnewbook h1 {
+  padding: 1em;
+}
+.allbooks {
+  margin: 3em auto;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.addnewbook .input {
+  display: block;
+  margin: 1em;
+  font-size: 1.5em;
+  outline: none;
+  border: none;
+  width: 50vw;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid #ffdfbb;
+}
+
+.bookshelf {
+  height: 22em;
+  width: auto;
+}
+.addbooktostr {
+  outline: none;
+  border: 2px solid #ffa136;
+  background: none;
+  padding: 1em 2em;
+  font-size: 1.5em;
+  margin-left: 1em;
+  margin-top: 1em;
+  cursor: pointer;
+}

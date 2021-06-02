@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Limelight", cursive;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 5em;
+}
+.hide {
+  overflow: hidden;
+}
+.menu {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 2em;
+}
+
+.addbook {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 223, 187);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: circle(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.menuvisible + .addbook {
+  clip-path: circle(100%);
+}
+
+.addbook_btn {
+  background: none;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  border: 2px solid rgb(255, 190, 116);
+  font-size: 25px;
+  transition: all 0.1s linear;
+}
+.link {
+  color: rgb(138, 62, 0);
+  text-decoration: none;
+}
+
+.font{
+  font-size: 2em;
+  display: block;
+  margin: 0 auto;
+  padding-top: 1em;
+  width: fit-content;
+}
+
+.addbook_btn:hover {
+  background-color: rgb(255, 190, 116);
+}
+
+.searchbook {
+  padding: 1em 2em;
+  margin: 2em auto;
+  /* max-width: fit-content; */
+  display: flex;
+  justify-content: space-between;
+  max-width: 64em;
+}
+.allbooks {
+  margin: 6em auto;
+  max-width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 388px);
+  grid-template-rows: auto;
+  grid-gap: 1em;
+  align-content: center;
+  justify-content: center;
+  min-height: 3em;
+}
+
+.searchinput {
+  height: inherit;
+  padding: 0.5em;
+  outline: none;
+  border-radius: 50px;
+  border: none;
+  width: 80%;
+  font-size: 1.4em;
+  padding-right: 5px;
+}
+
+.startsearch {
+  padding: 0.5em 2em;
+  border: 2px solid rgb(255, 190, 116);
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.searchbook::before {
+  content: "";
+  width: 54%;
+  position: absolute;
+  top: 185px;
+  background: orange;
+  border: 2px solid orange;
+  height: 0;
+  transform: scaleX(0);
+  transition: all 0.2s;
+}
+
+.m.searchbook::before {
+  transform: scaleX(1);
+}
+
+.startsearch:hover {
+  background-color: #ffbe74;
+}
+
+.fontb {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.book {
+  border: 1px solid orange;
+  position: relative;
+  padding: 1em;
+  overflow: hidden;
+}
+
+.center{
+  text-align: center;
+}
+
+.cover {
+  margin: 0 auto;
+  width: fit-content;
+  padding: 1em 0;
+}
+.label {
+  padding: 2em;
+  font-size: 1.5em;
+}
+.book:hover {
+  box-shadow: 1px 1px 5px orange;
+}
+.remove {
+  background-color: rgb(255, 190, 116);
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: -6em;
+  width: 100%;
+  padding: 1em 0;
+  cursor: pointer;
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+.book:hover .remove {
+  bottom: 0;
+}
+
+.book:hover .cover,
+.book:hover .label {
+  transform: translateY(-3em);
+}
+footer {
+  display: flex;
+  padding: 2em 5em;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+
+}
+body{
+  min-height: 100vh;
+}
+.links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 22%;
+}
+footer p {
+  font-size: 1.5em;
+}
