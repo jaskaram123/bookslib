@@ -3,8 +3,8 @@ var btn = document.querySelector(".addbooktostr");
 var section = document.querySelector('.allbooks')
 class addnewbook {
   constructor(bookname, author) {
-    this.bookname = bookname, 
-    this.author = author
+    this.bookname = bookname,
+      this.author = author
   }
   adding(bookobj) {
     var getting = localStorage.getItem("books");
@@ -24,13 +24,17 @@ class addnewbook {
     if (tryi <= 0) {
       arr.push(bookobj)
     }
-  localStorage.setItem('books', JSON.stringify(arr))
+    localStorage.setItem('books', JSON.stringify(arr))
   }
 }
 
 btn.addEventListener("click", function () {
   let newbook = new addnewbook(allinputs[0].value, allinputs[1].value);
   newbook.adding(newbook);
+  Array.from(allinputs).forEach(function (element) {
+    element.value = null
+  })
+  Array.from(allinputs)[0].focus()
 });
 
 document.getElementById('done').addEventListener('click', function () {
@@ -40,7 +44,10 @@ document.getElementById('done').addEventListener('click', function () {
 document.addEventListener('keydown', function (e) {
   if (e.keyCode == 13) {
     let newbook = new addnewbook(allinputs[0].value, allinputs[1].value);
-  newbook.adding(newbook);
-    
+    newbook.adding(newbook);
+    Array.from(allinputs).forEach(function (element) {
+      element.value = null
+      Array.from(allinputs)[0].focus()
+    })
   }
 })
