@@ -75,16 +75,30 @@ function delet(val) {
 }
 
 document.getElementById('search').addEventListener('click', function () {
-    var inputsearch = document.getElementById('searchinput').value
-    var bookss = document.getElementsByClassName('book')
-    Array.from(bookss).forEach(function (element) {
-        let txt = element.querySelector('.book .label h3').innerText
-        if (inputsearch == txt) {
-            element.style.display = 'block'
-            
-        }else{
-            element.style.display = 'none'
-
-        }
-    })
+  var inputsearch = document.getElementById('searchinput').value
+  var bookss = document.getElementsByClassName('book')
+  Array.from(bookss).forEach(function (element) {
+    let txt = element.querySelector('.book .label h3').innerText
+    if (txt.includes(inputsearch)) {
+      element.style.display = 'block'
+    } else {
+      element.style.display = 'none'
+    }
+    searchinput.value = null
+  })
+})
+document.getElementById('searchinput').addEventListener('keydown', function () {
+  var inputsearch = document.getElementById('searchinput').value
+  var bookss = document.getElementsByClassName('book')
+  Array.from(bookss).forEach(function (element) {
+    let txt = element.querySelector('.book .label h3').innerText
+    if (txt.includes(inputsearch)) {
+      element.style.display = 'block'
+    } else {
+      element.style.display = 'none'
+    }
+    if (searchinput.value == '') {
+      element.style.display = 'block'
+    }
+  })
 })
