@@ -96,7 +96,7 @@ nav {
 
 .startsearch {
   padding: 0.5em 2em;
-  border: 2px solid rgb(255, 190, 116);
+  border: 2px solid #ffbe74;
   background: none;
   font-size: 20px;
   cursor: pointer;
